@@ -121,7 +121,7 @@ private extension GameState {
             throw Error.wrongStage
         }
 
-        guard amount <= player.tokens else {
+        guard amount <= player.tokens && amount >= 0 else {
             throw Error.notEnoughTokens
         }
 
