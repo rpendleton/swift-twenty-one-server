@@ -1,0 +1,8 @@
+.git
+.build
+.DS_Store
+
+DerivedData
+Packages
+xcuserdata
+*.xcodeproj
