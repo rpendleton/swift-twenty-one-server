@@ -26,7 +26,7 @@ public struct Discord {
 
     public struct GameStateSelector: Codable, Equatable, StateType {
         let dealerCards: [Card?]
-        let players: [PlayerUUID: PlayerSelector]
+        let players: [String: PlayerSelector]
         let stage: Stage
         let events: [Event]
 
@@ -41,7 +41,7 @@ public struct Discord {
                 self.dealerCards = state.dealerCards
             }
 
-            self.players = state.players.mapValues { PlayerSelector($0) }
+            self.players = Dictionary(state.players.map { ($0.key.uuidString, PlayerSelector($0.value)) }, uniquingKeysWith: { $1 })
             self.stage = state.stage
             self.events = state.events
         }
