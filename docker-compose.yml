@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  server:
+    image: rpendleton/swift-twenty-one-server
+    restart: always
+    environment:
+      VIRTUAL_HOST: twenty-one-ws.ryanp.me
+
+networks:
+  default:
+    external:
+      name: proxy

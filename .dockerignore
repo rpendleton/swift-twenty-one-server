@@ -3,6 +3,8 @@
 .DS_Store
 
 DerivedData
+Dockerfile
 Packages
+docker-compose.yml
 xcuserdata
 *.xcodeproj

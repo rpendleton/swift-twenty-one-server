@@ -6,3 +6,5 @@ RUN swift package update
 COPY . ./
 
 RUN swift build
+EXPOSE 8080
+CMD /app/.build/debug/Run
